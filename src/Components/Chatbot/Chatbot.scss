@@ -1,0 +1,49 @@
+// Создаем миксин для стилей компонента формы
+@mixin form-component-style {
+    border-radius: 10px; // Задаем скругленные углы
+    padding: 0.5em; // Добавляем внутренний отступ
+    font-size: 1em; // Задаем размер шрифта
+}
+
+// Стили для контейнера чатбота
+.chat-container {
+    width: 80vw; // Задаем ширину
+    height: 60vh; // Задаем высоту
+    display: flex; // Располагаем элементы в строку
+    flex-direction: column; // Выстраиваем их по вертикали
+    justify-content: space-between; // Распределяем пространство между элементами
+    border: 0.5px solid #d8d8d8; // Добавляем тонкую рамку
+    padding: 2em; // Добавляем внешний отступ
+    border-radius: 10px; // Задаем скругленные углы
+
+    // Стили для контейнера формы
+    .form-container {
+        display: flex; // Располагаем элементы в строку
+        justify-content: space-between; // Распределяем пространство между элементами
+
+        input {
+            width: 92%; // Задаем ширину
+            border-style: none; // Убираем стандартные границы
+            border: 0.5px solid #393e46; // Добавляем кастомную границу
+            @include form-component-style; // Включаем миксин для стилей
+
+            &:focus {
+                outline: none; // Убираем стандартное выделение при фокусе
+            }
+        }
+
+        button {
+            background: #e5dfdf; // Задаем цвет фона
+            color: #393e46; // Задаем цвет текста
+            border-style: none; // Убираем стандартные границы
+            @include form-component-style; // Включаем миксин для стилей
+
+            &:hover {
+                opacity: 0.8; // Добавляем небольшую прозрачность при наведении
+                cursor: pointer; // Изменяем вид курсора на указатель
+            }
+        }
+    }
+}
+
+
